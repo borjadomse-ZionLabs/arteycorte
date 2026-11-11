@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arte & Corte · Barbería en Sitges | Sin cita · Espera en directo</title>
+<meta name="description" content="Barbería clásica en Sitges, sin cita y por orden de llegada. Mira la espera en directo antes de venir. Fades, cortes clásicos, barba y afeitado a navaja. 4,8★ con más de 550 reseñas en Google.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0d0c0b">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arte & Corte · Barbería en Sitges">
+<meta property="og:description" content="Sin cita · Mira la espera en directo antes de venir · 4,8★ en Google">
+<meta property="og:image" content="https://borjadomse-zionlabs.github.io/arteycorte/og.jpg">
+<meta property="og:locale" content="es_ES">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600;1,800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="v2.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BarberShop","name":"Arte & Corte · Barbería Esquivel","image":"https://borjadomse-zionlabs.github.io/arteycorte/og.jpg","telephone":"+34931897806","url":"https://borjadomse-zionlabs.github.io/arteycorte/",
+"address":{"@type":"PostalAddress","streetAddress":"Carrer d'Espalter, 31","addressLocality":"Sitges","postalCode":"08870","addressRegion":"Barcelona","addressCountry":"ES"},
+"geo":{"@type":"GeoCoordinates","latitude":41.2369276,"longitude":1.8063941},"priceRange":"€","acceptsReservations":"False",
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"559"},
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:00","closes":"15:00"}],
+"sameAs":["https://www.instagram.com/arteycorte.esquivel/"]}
+</script>
+<script src="config.js"></script>
+<script src="i18n.js"></script>
+<script src="estado.js"></script>
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-pole"><span></span></div>
+  <div class="loader-word">Arte <em>&amp;</em> Corte</div>
+</div>
+
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Arte & Corte">
+    <span class="brand-mark">A<em>&amp;</em>C</span>
+    <span class="brand-txt"><b>Arte &amp; Corte</b><small>Barbería · Sitges</small></span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#ahora" data-i18n="nav.ahora">Espera ahora</a>
+    <a href="#servicios" data-i18n="nav.servicios">Precios</a>
+    <a href="#trabajos" data-i18n="nav.trabajos">Trabajos</a>
+    <a href="#opiniones" data-i18n="nav.opiniones">Opiniones</a>
+    <a href="#visitanos" data-i18n="nav.visitanos">Visítanos</a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang" id="lang"><button data-lang="es" class="on">ES</button><button data-lang="ca">CA</button><button data-lang="en">EN</button></div>
+    <a href="#ahora" class="live-chip js-live-chip"><i class="ld"></i><span class="js-live-short">—</span></a>
+    <button class="burger" id="burger" aria-label="Menú"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" style="background-image:url(img/hero.webp)"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-grid">
+    <div class="hero-inner">
+      <p class="eyebrow reveal"><span class="pole-dot"></span> <span data-i18n="hero.eyebrow">Barbería clásica · Sitges · Sin cita</span></p>
+      <h1 class="hero-title reveal"><span data-i18n="hero.t1">El arte de</span><br><em data-i18n="hero.t2">un buen corte.</em></h1>
+      <p class="hero-sub reveal" data-i18n="hero.sub">Sin cita y por orden de llegada, como siempre. La diferencia: ahora ves la espera en directo antes de salir de casa.</p>
+      <div class="hero-ctas reveal">
+        <a href="#ahora" class="btn btn-brass btn-lg"><span data-i18n="cta.verEspera">Ver espera y mejores horas</span> <i class="arr">→</i></a>
+        <a href="#" class="btn btn-ghost btn-lg js-wa-cola"><svg class="ico"><use href="#i-wa"/></svg> <span data-i18n="cta.hayCola">¿Hay cola?</span></a>
+      </div>
+      <a class="hero-rating reveal" href="#opiniones"><span class="stars">★★★★★</span> <b>4,8</b> <span data-i18n="hero.rating">· 559 reseñas en Google</span></a>
+    </div>
+
+    <!-- tarjeta espera en directo -->
+    <aside class="wait-card reveal js-wait" aria-live="polite">
+      <div class="wc-top"><span class="wc-live"><i class="ld"></i><span class="js-w-tag">EN DIRECTO</span></span><span class="wc-open js-w-open"></span></div>
+      <p class="wc-k" data-i18n="w.ahora">Espera ahora</p>
+      <div class="wc-big js-w-big">—</div>
+      <p class="wc-sub js-w-sub"></p>
+      <div class="wc-meter"><i class="js-w-meter"></i></div>
+      <div class="wc-btns">
+        <a class="btn btn-brass btn-sm js-route" target="_blank" rel="noopener" data-i18n="vis.como">Cómo llegar</a>
+        <a class="btn btn-line-light btn-sm js-wa-cola" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg> <span data-i18n="cta.voy">Voy para allá</span></a>
+      </div>
+    </aside>
+  </div>
+  <a href="#ahora" class="scroll-cue" aria-label="Scroll"><span></span></a>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee">
+    <span data-i18n="mq.1">Sin cita</span><i>✦</i><span>Fade</span><i>✦</i><span data-i18n="mq.2">Corte clásico</span><i>✦</i><span data-i18n="mq.3">Arreglo de barba</span><i>✦</i><span data-i18n="mq.4">Afeitado a navaja</span><i>✦</i><span data-i18n="mq.5">Espera en directo</span><i>✦</i><span>Platino</span><i>✦</i><span>Kids</span><i>✦</i>
+  </div>
+</div>
+
+<!-- AHORA: espera + mejores horas -->
+<section class="ahora section dark" id="ahora">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker reveal" data-i18n="ah.kicker">Sin cita, sin sorpresas</p>
+      <h2 class="h2 reveal" data-i18n-html="ah.title">Mira la cola <em>antes de venir.</em></h2>
+      <p class="lead reveal" data-i18n="ah.sub">Aquí no se pide cita: llegas y te sentamos por turno. Para que no vengas a ciegas, el barbero actualiza la espera desde su móvil y tú la ves aquí al momento.</p>
+    </div>
+    <div class="ah-grid">
+      <div class="ah-steps reveal">
+        <div class="ah-step"><b>1</b><div><h3 data-i18n="ah.s1t">Mira la espera</h3><p data-i18n="ah.s1">En directo, actualizada por el equipo desde la barbería.</p></div></div>
+        <div class="ah-step"><b>2</b><div><h3 data-i18n="ah.s2t">Elige tu momento</h3><p data-i18n="ah.s2">Si hay lío, el mapa te dice a qué hora suele estar tranquilo.</p></div></div>
+        <div class="ah-step"><b>3</b><div><h3 data-i18n="ah.s3t">Entra y siéntate</h3><p data-i18n="ah.s3">Por orden de llegada, como toda la vida. Sin apps, sin registros.</p></div></div>
+        <div class="ah-live js-wait">
+          <span class="wc-live"><i class="ld"></i><span class="js-w-tag">EN DIRECTO</span></span>
+          <div class="ah-live-row"><div class="wc-big js-w-big">—</div><p class="wc-sub js-w-sub"></p></div>
+        </div>
+      </div>
+      <div class="heat reveal">
+        <div class="heat-head"><h3 data-i18n="ah.mejores">Mejores horas para venir</h3><span class="heat-note" data-i18n="ah.orient">Orientativo · lo habitual</span></div>
+        <div class="heat-grid" id="heat"></div>
+        <div class="heat-leg"><span><i class="h0"></i><span data-i18n="ah.l0">Tranquilo</span></span><span><i class="h1"></i><span data-i18n="ah.l1">Normal</span></span><span><i class="h2"></i><span data-i18n="ah.l2">Movido</span></span><span><i class="h3"></i><span data-i18n="ah.l3">Lleno</span></span></div>
+        <p class="heat-tip" id="heatTip"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LA CASA -->
+<section class="casa section" id="casa">
+  <div class="wrap casa-grid">
+    <figure class="casa-photo reveal">
+      <img src="img/fachada.webp" alt="Fachada de la barbería Arte & Corte en Carrer d'Espalter, Sitges" loading="lazy" width="900" height="1125">
+      <figcaption>Carrer d'Espalter, 31</figcaption>
+      <div class="stamp"><svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#circ">ESQUIVEL · ARTE &amp; CORTE · BARBERÍA · SITGES · </textPath></text></svg><b>A<em>&amp;</em>C</b></div>
+    </figure>
+    <div class="casa-txt">
+      <p class="kicker reveal" data-i18n="casa.kicker">La casa</p>
+      <h2 class="h2 reveal" data-i18n-html="casa.title">Una barbería de las <em>de verdad.</em></h2>
+      <p class="lead reveal" data-i18n="casa.p1">Ladrillo visto, sillones de cuero verde, guitarras en la pared y buena música sonando. Aquí cortamos con calma, escuchamos lo que quieres y cuidamos cada detalle: del degradado al último repaso de navaja.</p>
+      <ul class="pillars reveal">
+        <li><b data-i18n="casa.f1t">Técnica</b><span data-i18n="casa.f1">Fades, texturas y clásicos de tijera hechos a mano.</span></li>
+        <li><b data-i18n="casa.f2t">Higiene</b><span data-i18n="casa.f2">Material desinfectado en cada servicio, siempre.</span></li>
+        <li><b data-i18n="casa.f3t">Ambiente</b><span data-i18n="casa.f3">Buena música, aire acondicionado y charla de barbería.</span></li>
+        <li><b data-i18n="casa.f4t">Producto</b><span data-i18n="casa.f4">Selección de los mejores productos para pelo y barba.</span></li>
+      </ul>
+      <div class="stats reveal">
+        <div><b data-count="4.8" data-dec="1">0</b><span data-i18n="stats.google">nota en Google</span></div>
+        <div><b data-count="559">0</b><span data-i18n="stats.resenas">reseñas</span></div>
+        <div><b data-count="4">0</b><span data-i18n="stats.barberos">barberos</span></div>
+        <div><b data-count="7">0</b><span data-i18n="stats.dias">días a la semana</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="servicios section dark" id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker reveal" data-i18n="serv.kicker">Carta de servicios</p>
+      <h2 class="h2 reveal" data-i18n-html="serv.title">Precios claros. <em>Cortes impecables.</em></h2>
+    </div>
+    <div class="menu-board reveal">
+      <div class="menu-col"><h3 class="menu-h" data-i18n="serv.barberia">Servicio barbería</h3><ul class="menu-list" id="menuBarberia"></ul></div>
+      <div class="menu-sep"></div>
+      <div class="menu-col"><h3 class="menu-h" data-i18n="serv.tecnicos">Técnicos · Color &amp; tratamientos</h3><ul class="menu-list" id="menuTecnicos"></ul></div>
+    </div>
+    <p class="menu-note reveal" data-i18n="serv.note">Sin cita: ven cuando quieras y te atendemos por orden de llegada. Efectivo o tarjeta.</p>
+  </div>
+</section>
+
+<!-- TRABAJOS -->
+<section class="trabajos section" id="trabajos">
+  <div class="wrap">
+    <div class="sec-head row">
+      <div><p class="kicker reveal" data-i18n="gal.kicker">Trabajos reales</p><h2 class="h2 reveal" data-i18n-html="gal.title">Salen de aquí <em>así.</em></h2></div>
+      <div class="filters reveal" id="filters">
+        <button class="on" data-f="all" data-i18n="gal.all">Todos</button><button data-f="fade">Fades</button><button data-f="clas" data-i18n="gal.clas">Clásicos</button><button data-f="barba" data-i18n="gal.barba">Barba</button><button data-f="color" data-i18n="gal.color">Color</button><button data-f="local" data-i18n="gal.local">El local</button>
+      </div>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<!-- RECORDATORIO -->
+<section class="recuerda section" id="recordatorio">
+  <div class="wrap rec-grid">
+    <div class="rec-txt">
+      <p class="kicker reveal" data-i18n="rec.kicker">Recordatorio de corte</p>
+      <h2 class="h2 reveal" data-i18n-html="rec.title">Que no se te <em>pase el corte.</em></h2>
+      <p class="lead reveal" data-i18n="rec.sub">Un fade se ve perfecto unas 3 semanas. Elige cada cuánto te cortas y tu propio móvil te avisa. Sin apps y sin darnos tus datos.</p>
+      <div class="rec-freq reveal" id="recFreq">
+        <button data-w="2">2 <small data-i18n="rec.sem">sem</small></button><button data-w="3" class="on">3 <small data-i18n="rec.sem">sem</small></button><button data-w="4">4 <small data-i18n="rec.sem">sem</small></button><button data-w="5">5 <small data-i18n="rec.sem">sem</small></button><button data-w="6">6 <small data-i18n="rec.sem">sem</small></button>
+      </div>
+      <p class="rec-next reveal" id="recNext"></p>
+      <div class="rec-btns reveal">
+        <a class="btn btn-brass" id="recG" target="_blank" rel="noopener"><span data-i18n="rec.google">Google Calendar</span></a>
+        <button class="btn btn-ghost-dark" id="recIcs"><span data-i18n="rec.ics">iPhone / Outlook</span></button>
+      </div>
+    </div>
+    <div class="phone reveal" aria-hidden="true">
+      <div class="ph-notch"></div>
+      <div class="ph-time" id="phTime">9:41</div>
+      <div class="ph-date" id="phDate"></div>
+      <div class="ph-noti">
+        <div class="ph-app"><span class="ph-ic">📅</span><span data-i18n="rec.cal">Calendario</span><span class="ph-now" data-i18n="rec.ahora">ahora</span></div>
+        <b>💈 <span data-i18n="rec.notiT">Toca corte · Arte & Corte</span></b>
+        <p data-i18n="rec.notiP">Mira la espera en directo antes de ir →</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section class="equipo section dark" id="equipo">
+  <div class="equipo-bg" style="background-image:url(img/equipo.webp)"></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker reveal" data-i18n="eq.kicker">El equipo</p>
+      <h2 class="h2 reveal" data-i18n-html="eq.title">Cuatro manos maestras. <em>Elige la tuya.</em></h2>
+      <p class="lead reveal" data-i18n="eq.sub">¿Tienes barbero de confianza? Pregunta si está hoy y a qué hora le pillas más libre.</p>
+    </div>
+    <div class="team" id="team"></div>
+  </div>
+</section>
+
+<!-- OPINIONES -->
+<section class="opiniones section" id="opiniones">
+  <div class="wrap">
+    <div class="op-grid">
+      <div class="op-score reveal">
+        <p class="kicker" data-i18n="op.kicker">Lo que dicen de nosotros</p>
+        <div class="big-score">4,8</div>
+        <div class="stars big">★★★★★</div>
+        <p class="op-count"><b>559</b> <span data-i18n="op.count">reseñas en Google</span></p>
+        <div class="op-btns">
+          <a class="btn btn-ghost-dark js-maps" target="_blank" rel="noopener" data-i18n="op.ver">Ver en Google</a>
+          <a class="btn btn-brass" id="gReview" target="_blank" rel="noopener" data-i18n="op.escribir">Escribe tu reseña</a>
+        </div>
+      </div>
+      <div class="op-slider reveal">
+        <div class="op-track" id="opTrack"></div>
+        <div class="op-ctrl"><button id="opPrev" aria-label="prev">←</button><div class="op-dots" id="opDots"></div><button id="opNext" aria-label="next">→</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="insta section dark" id="instagram">
+  <div class="wrap">
+    <div class="sec-head row">
+      <div><p class="kicker reveal">@arteycorte.esquivel</p><h2 class="h2 reveal" data-i18n-html="ig.title">Lo último, <em>en Instagram.</em></h2></div>
+      <a class="btn btn-line-light reveal js-ig" target="_blank" rel="noopener"><svg class="ico"><use href="#i-ig"/></svg> <span data-i18n="ig.seguir">Síguenos</span></a>
+    </div>
+    <div class="ig-grid reveal" id="igGrid"></div>
+  </div>
+</section>
+
+<!-- REGALO -->
+<section class="regalo">
+  <div class="wrap regalo-inner reveal">
+    <div class="gift-card"><div class="gc-top"><span>Gift card</span><span>Nº 0031</span></div><div class="gc-logo">Arte <em>&amp;</em> Corte</div><div class="gc-bot"><span>Barbería · Sitges</span><b>★</b></div></div>
+    <div class="regalo-txt">
+      <p class="kicker" data-i18n="gift.kicker">Tarjeta regalo</p>
+      <h2 class="h2" data-i18n-html="gift.title">Regala un <em>buen corte.</em></h2>
+      <p data-i18n="gift.p">Cumpleaños, Día del Padre, o porque sí. Pídela por WhatsApp y la tienes lista para entregar.</p>
+      <a href="#" class="btn btn-brass js-wa-gift"><svg class="ico"><use href="#i-wa"/></svg> <span data-i18n="gift.cta">Pedir tarjeta regalo</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- VISÍTANOS -->
+<section class="visitanos section dark" id="visitanos">
+  <div class="wrap vis-grid">
+    <div class="vis-info reveal">
+      <p class="kicker" data-i18n="vis.kicker">Visítanos</p>
+      <h2 class="h2" data-i18n-html="vis.title">En pleno <em>Sitges.</em></h2>
+      <a class="vis-addr js-maps" target="_blank" rel="noopener">Carrer d'Espalter, 31<br>08870 Sitges, Barcelona</a>
+      <table class="hours" id="hours"></table>
+      <div class="vis-btns">
+        <a class="btn btn-brass js-route" target="_blank" rel="noopener" data-i18n="vis.como">Cómo llegar</a>
+        <a class="btn btn-line-light js-tel"><span data-i18n="vis.llamar">Llamar</span> · 931 89 78 06</a>
+      </div>
+    </div>
+    <div class="vis-map reveal"><iframe title="Mapa Arte & Corte" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Arte+%26+Corte,+Carrer+d'Espalter+31,+08870+Sitges&z=17&output=embed"></iframe></div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="final-bg" style="background-image:url(img/interior.webp)"></div>
+  <div class="wrap final-inner reveal">
+    <h2 class="h2" data-i18n-html="final.title">Sin cita. <em>Sin esperas sorpresa.</em></h2>
+    <div class="hero-ctas"><a href="#ahora" class="btn btn-brass btn-lg" data-i18n="cta.verEspera">Ver espera y mejores horas</a><a href="#" class="btn btn-ghost btn-lg js-route" target="_blank" rel="noopener" data-i18n="vis.como">Cómo llegar</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div><div class="foot-logo">Arte <em>&amp;</em> Corte</div><p class="foot-sub">Esquivel · Barbería · Sitges</p></div>
+    <div class="foot-col"><b data-i18n="foot.contacto">Contacto</b><a class="js-tel">931 89 78 06</a><a href="#" class="js-wa">WhatsApp</a><a class="js-maps" target="_blank" rel="noopener">Carrer d'Espalter, 31</a></div>
+    <div class="foot-col"><b data-i18n="foot.siguenos">Síguenos</b><a class="js-ig" target="_blank" rel="noopener">Instagram</a><a class="js-maps" target="_blank" rel="noopener">Google Maps</a></div>
+    <div class="foot-col"><b>Legal</b><a href="#" data-modal="aviso" data-i18n="legal.aviso">Aviso legal</a><a href="#" data-modal="privacidad" data-i18n="legal.privacidad">Privacidad</a><a href="#" data-modal="cookies" data-i18n="legal.cookies">Cookies</a><a href="panel.html" class="foot-staff" data-i18n="foot.equipo">Acceso equipo →</a></div>
+  </div>
+  <div class="wrap foot-bottom"><span>© <span id="year"></span> Arte &amp; Corte · Sitges</span><span data-i18n="foot.hecho">Hecho con oficio, como un buen corte.</span></div>
+</footer>
+
+<a href="#" class="wa-float js-wa-cola" aria-label="WhatsApp"><span class="wa-bubble" data-i18n="wa.bubble">¿Cuánta cola hay ahora? 💈</span><span class="wa-btn"><svg class="ico"><use href="#i-wa"/></svg></span></a>
+
+<div class="mbar">
+  <a class="js-tel"><svg class="ico"><use href="#i-phone"/></svg><span data-i18n="vis.llamar">Llamar</span></a>
+  <a class="js-route" target="_blank" rel="noopener"><svg class="ico"><use href="#i-pin"/></svg><span data-i18n="mb.ir">Ir</span></a>
+  <a href="#ahora" class="mbar-cta"><i class="ld"></i><span class="js-live-short">—</span></a>
+</div>
+
+<div class="lb" id="lb" aria-hidden="true"><button class="lb-x" id="lbX" aria-label="close">×</button><button class="lb-n lb-p" id="lbP">‹</button><img id="lbImg" alt=""><button class="lb-n lb-nx" id="lbN">›</button></div>
+<div class="modal" id="modal" aria-hidden="true"><div class="modal-card"><button class="lb-x" id="modalX" aria-label="close">×</button><div id="modalBody"></div></div></div>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c3.1 1.2 3.1.8 3.7.8a3.1 3.1 0 0 0 2-1.4 2.6 2.6 0 0 0 .2-1.4c-.1-.2-.3-.3-.6-.4zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.3A11.8 11.8 0 0 0 1.8 17.7L.1 24l6.4-1.7a11.8 11.8 0 0 0 5.6 1.4A11.8 11.8 0 0 0 20.4 3.5z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zM17.6 6.4h.01"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12zm0-9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></symbol>
+</svg>
+
+<script src="main.js"></script>
+</body>
+</html>

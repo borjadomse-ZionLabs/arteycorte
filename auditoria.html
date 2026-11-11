@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Auditoría · Arte & Corte</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0d0c0b">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600;1,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+body{background:var(--ink);color:var(--cream)}
+.w{width:min(1040px,100% - 36px);margin-inline:auto}
+.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.top .brand{color:var(--cream)}
+.top small.d{font-family:var(--cond);letter-spacing:.2em;text-transform:uppercase;font-size:.7rem;color:var(--muted)}
+.hd{padding:clamp(60px,10vw,120px) 0 clamp(40px,6vw,70px)}
+.hd h1{font-family:var(--serif);font-weight:900;font-size:clamp(2.6rem,7.5vw,5.6rem);line-height:.98;letter-spacing:-.03em}
+.hd h1 em{color:var(--brass2);font-weight:600}
+.hd p{font-size:clamp(1.05rem,1.6vw,1.25rem);color:rgba(243,235,220,.8);max-width:56ch;margin-top:26px}
+.score{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}
+.sc{border-radius:20px;padding:26px;border:1px solid var(--line)}
+.sc.good{background:rgba(62,207,116,.07);border-color:rgba(62,207,116,.3)}
+.sc.bad{background:rgba(232,97,60,.08);border-color:rgba(232,97,60,.35)}
+.sc .k{font-family:var(--cond);text-transform:uppercase;letter-spacing:.22em;font-size:.72rem}
+.sc.good .k{color:#3ecf74}.sc.bad .k{color:#e8613c}
+.sc ul{list-style:none;margin-top:14px;display:grid;gap:8px}
+.sc li{display:flex;gap:10px;font-size:.98rem}
+.sc.good li::before{content:"✓";color:#3ecf74;font-weight:700}
+.sc.bad li::before{content:"✕";color:#e8613c;font-weight:700}
+.sec{padding:clamp(50px,8vw,90px) 0;border-top:1px solid var(--line)}
+.sec>.k,.kk{font-family:var(--cond);text-transform:uppercase;letter-spacing:.3em;font-size:.76rem;color:var(--brass);margin-bottom:14px;display:block}
+.sec h2{font-family:var(--serif);font-weight:800;font-size:clamp(2rem,5vw,3.6rem);line-height:1.02;letter-spacing:-.02em;margin-bottom:34px}
+.sec h2 em{color:var(--brass2);font-weight:600}
+.leak{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(20px,4vw,50px);padding:clamp(22px,3.5vw,38px);border-radius:24px;background:var(--ink2);border:1px solid var(--line);margin-bottom:16px;align-items:start}
+.leak.no-img{grid-template-columns:1fr}
+.leak>*,.calc>*,.sol>*,.score>*,.offer>*,.it>*{min-width:0}
+html,body{overflow-x:hidden}
+.sev{display:inline-flex;align-items:center;gap:8px;font-family:var(--cond);letter-spacing:.18em;text-transform:uppercase;font-size:.7rem;padding:6px 12px;border-radius:99px;margin-bottom:16px}
+.sev.c{background:rgba(232,97,60,.15);color:#ff8a65}.sev.a{background:rgba(240,164,58,.15);color:#f0a43a}.sev.m{background:rgba(201,216,74,.13);color:#c9d84a}
+.leak h3{font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;line-height:1.12;margin-bottom:14px}
+.leak p{color:rgba(243,235,220,.78);margin-bottom:12px}
+.leak q{display:block;font-family:var(--serif);font-style:italic;font-size:1.12rem;color:var(--cream);border-left:2px solid #e8613c;padding:4px 0 4px 14px;margin:14px 0}
+.fix{margin-top:16px;padding:14px 16px;border-radius:14px;background:rgba(201,163,91,.09);border:1px solid rgba(201,163,91,.3);font-size:.95rem}
+.fix b{color:var(--brass2)}
+.shots{display:grid;gap:10px}
+.shots figure{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.shots figcaption{background:var(--ink3);color:var(--muted);font-size:.78rem;padding:8px 12px}
+.shots img{width:100%}
+.rank{list-style:none;display:grid;gap:6px;margin-top:10px}
+.rank li{display:grid;grid-template-columns:28px 1fr auto auto;gap:12px;align-items:center;padding:12px 14px;border-radius:12px;background:var(--ink3);font-size:.95rem}
+.rank li b{font-family:var(--serif);font-size:1.2rem;color:var(--muted)}
+.rank li.me{background:rgba(201,163,91,.14);border:1px solid rgba(201,163,91,.4)}
+.rank li.me b{color:var(--brass2)}
+.rank .web{font-family:var(--cond);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:99px;background:rgba(62,207,116,.15);color:#3ecf74}
+.rank .noweb{font-family:var(--cond);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:99px;background:rgba(232,97,60,.15);color:#ff8a65}
+.rank small{color:var(--muted)}
+/* calculadora */
+.calc{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.cin{padding:28px;border-radius:24px;background:var(--ink2);border:1px solid var(--line);display:grid;gap:22px}
+.cin label{display:grid;gap:8px;font-size:.95rem}
+.cin label span{display:flex;justify-content:space-between;gap:10px}
+.cin label b{font-family:var(--serif);font-size:1.3rem;color:var(--brass2)}
+.cin input[type=range]{width:100%;accent-color:var(--brass)}
+.cin small{color:var(--muted);font-size:.8rem}
+.cout{padding:30px;border-radius:24px;background:linear-gradient(160deg,#3a2a14,#1a140c);border:1px solid rgba(201,163,91,.45);display:flex;flex-direction:column;justify-content:center}
+.cout .big{font-family:var(--serif);font-weight:900;font-size:clamp(3rem,7vw,5rem);line-height:1;color:var(--brass2);margin:6px 0 10px}
+.cout p{color:rgba(243,235,220,.8)}
+.cout .row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.cout .row b{font-variant-numeric:tabular-nums}
+.cout .pay{margin-top:18px;padding:14px;border-radius:14px;background:rgba(62,207,116,.1);color:#9be6b5;font-size:.98rem}
+.note{color:var(--muted);font-size:.82rem;margin-top:12px}
+/* solución */
+.sol{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.si{padding:26px;border-radius:22px;background:var(--paper);color:var(--ink)}
+.si .n{font-family:var(--cond);letter-spacing:.2em;font-size:.7rem;text-transform:uppercase;color:var(--brassD)}
+.si h3{font-family:var(--serif);font-size:1.5rem;font-weight:800;margin:8px 0}
+.si p{color:var(--mutedD);font-size:.96rem}
+.si .t{display:inline-block;margin-top:12px;font-size:.78rem;font-family:var(--cond);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:var(--brass);padding:4px 10px;border-radius:99px}
+.demo-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+/* precio */
+.items{display:grid;gap:8px}
+.it{display:grid;grid-template-columns:1fr auto;gap:4px 20px;align-items:center;padding:18px 22px;border-radius:16px;background:var(--ink2);border:1px solid var(--line)}
+.it h4{font-size:1.05rem;font-weight:600}
+.it p{grid-column:1;color:var(--muted);font-size:.88rem}
+.it .pr{grid-row:1/3;grid-column:2;font-family:var(--serif);font-weight:800;font-size:1.6rem;text-align:right}
+.it.gift{border-color:rgba(62,207,116,.4)}
+.it.gift .pr s{color:var(--muted);font-size:1.1rem;display:block}
+.it .g{display:inline-block;font-family:var(--cond);letter-spacing:.14em;text-transform:uppercase;font-size:.66rem;color:var(--ink);background:#3ecf74;padding:3px 8px;border-radius:99px;margin-left:8px;vertical-align:middle}
+.offer{margin-top:20px;padding:clamp(28px,4vw,48px);border-radius:28px;background:linear-gradient(135deg,var(--brass2),var(--brass) 55%,var(--brassD));color:var(--ink);display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+.offer small{font-family:var(--cond);letter-spacing:.2em;text-transform:uppercase;font-size:.74rem}
+.offer h3{font-family:var(--serif);font-weight:900;font-size:clamp(2rem,4vw,3rem);line-height:1;margin:8px 0}
+.offer .p{text-align:right}
+.offer .p s{font-size:1.2rem;opacity:.6}
+.offer .p b{display:block;font-family:var(--serif);font-weight:900;font-size:clamp(3.6rem,9vw,6rem);line-height:.9}
+.offer .p span{font-size:.85rem}
+.end{padding:clamp(60px,10vw,120px) 0;text-align:center}
+.end h2{font-family:var(--serif);font-weight:900;font-size:clamp(2.4rem,7vw,5rem);line-height:1}
+.end h2 em{color:var(--brass2);font-weight:600}
+.end p{color:var(--muted);margin-top:16px}
+@media (max-width:760px){.score,.calc,.sol,.leak{grid-template-columns:1fr}.offer{grid-template-columns:1fr}.offer .p{text-align:left}.it{grid-template-columns:1fr}.it .pr{grid-row:auto;grid-column:1;text-align:left}}
+</style>
+</head>
+<body>
+
+<div class="w top">
+  <span class="brand"><span class="brand-mark">A<em>&amp;</em>C</span><span class="brand-txt"><b>Arte &amp; Corte</b><small>Auditoría digital</small></span></span>
+  <small class="d">Sitges · noviembre 2026</small>
+</div>
+
+<header class="w hd">
+  <span class="kk">Auditoría rápida</span>
+  <h1>Tu barbería es de las mejores de Sitges. <em>Internet todavía no lo sabe.</em></h1>
+  <p>He revisado cómo te encuentra un cliente nuevo: Google, Treatwell, Instagram y tu calle. Tienes lo más difícil, que son 559 reseñas con un 4,8. Pero hay 5 fugas por las que se te van clientes cada semana. Ninguna tiene que ver con reservas, y todas tienen arreglo.</p>
+  <div class="score">
+    <div class="sc good"><span class="k">Lo que ya tienes</span><ul><li>4,8★ con 559 reseñas: de las barberías con más reseñas de Sitges</li><li>Un local con personalidad que se ve en las fotos</li><li>Precios muy competitivos (corte 15 €)</li><li>Abierto 7 días a la semana</li></ul></div>
+    <div class="sc bad"><span class="k">Por dónde se escapa</span><ul><li>Google manda a tus clientes a una página vacía</li><li>Hay una ficha fantasma con 4,1★ en tu dirección</li><li>No tienes web</li><li>Nadie sabe si hay cola antes de venir</li><li>El cliente vuelve "cuando se acuerda"</li></ul></div>
+  </div>
+</header>
+
+<section class="w sec">
+  <span class="k">Las fugas</span>
+  <h2>Lo que he encontrado, <em>con pruebas.</em></h2>
+
+  <article class="leak">
+    <div>
+      <span class="sev c">● Crítica · 1</span>
+      <h3>El botón "Reservar" de tu Google lleva a una página vacía… que recomienda a otro salón.</h3>
+      <p>En tu ficha de Google Maps sale un botón grande de <b>"Reservar en línea"</b>. Lleva a tu página de Treatwell, que tiene 0 opiniones, ningún servicio, ningún precio y ningún botón para reservar.</p>
+      <p>Al final de esa página, Treatwell pone <b>"Barberías cerca"</b> y enlaza a <b>"Otras barberías en Sitges"</b>.</p>
+      <p>O sea: el cliente que más ganas tiene de venir pulsa ese botón y acaba viendo a la competencia.</p>
+      <div class="fix"><b>Arreglo:</b> quitar ese enlace de tu Google y poner en su lugar tu web, con la espera en directo y tu WhatsApp.</div>
+    </div>
+    <div class="shots">
+      <figure><img src="img/audit/treatwell-vacio.webp" alt="Página de Treatwell sin opiniones" loading="lazy"><figcaption>Tu página de Treatwell: 0 opiniones, sin servicios</figcaption></figure>
+      <figure><img src="img/audit/treatwell-competencia.webp" alt="Treatwell recomendando otros salones" loading="lazy"><figcaption>Y al final: "Barberías cerca" y "Otras barberías en Sitges"</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="leak">
+    <div>
+      <span class="sev c">● Crítica · 2</span>
+      <h3>En tu dirección hay otra barbería en Google. Sin dueño, con peor nota y con el horario mal.</h3>
+      <p>Si buscas "barbería Sitges" sale <b>"Barberia Home &amp; Dona"</b> en Carrer d'Espalter, 31: tu misma dirección y el mismo punto del mapa. Tiene <b>4,1★</b>, nadie la ha reclamado, no tiene teléfono y dice que <b>cierra a las 21:00</b>.</p>
+      <p>Sus reseñas son las que no quieres que lea nadie:</p>
+      <q>"Me han cobrado 27 €… No voy a volver."</q>
+      <q>"Lo peor, que no cogen cita, va por turno."</q>
+      <p>Y como está sin reclamar, cualquiera puede quedársela y cambiarle los datos.</p>
+      <div class="fix"><b>Arreglo:</b> reclamar la ficha a tu nombre y pedir a Google que la marque como duplicada. Así todo el tráfico de esa dirección va a Arte &amp; Corte.</div>
+    </div>
+    <div class="shots"><figure><img src="img/audit/ficha-fantasma.webp" alt="Ficha de Barberia Home & Dona en Google Maps" loading="lazy"><figcaption>"Barberia Home &amp; Dona": Carrer d'Espalter, 31 · "Reclamar este negocio"</figcaption></figure></div>
+  </article>
+
+  <article class="leak">
+    <div>
+      <span class="sev a">● Alta · 3</span>
+      <h3>Tienes más reseñas que los que salen delante de ti. Te falta la web.</h3>
+      <p>Así salen en Google Maps al buscar <b>"barbería Sitges"</b>:</p>
+      <ol class="rank">
+        <li><b>1</b><span>Barbería Anas <small>· 266 reseñas</small></span><span class="web">con web</span><span>4,9★</span></li>
+        <li><b>2</b><span>Efimero Barbershop <small>· 417 · tu calle, nº 51</small></span><span></span><span>4,8★</span></li>
+        <li class="me"><b>3</b><span>Arte &amp; Corte <small>· 559 reseñas</small></span><span class="noweb">sin web</span><span>4,8★</span></li>
+      </ol>
+      <p style="margin-top:14px">Tu ficha dice <b>"Agregar sitio web"</b>. La web es una de las señales que mira Google para ordenar los resultados, y es justo la que te falta. Además, Sitges vive del turismo y ahora mismo no tienes nada en inglés.</p>
+      <div class="fix"><b>Arreglo:</b> web propia en castellano, catalán e inglés, enlazada desde Google y desde la bio de Instagram.</div>
+    </div>
+  </article>
+
+  <article class="leak no-img">
+    <div>
+      <span class="sev a">● Alta · 4 · La fuga principal</span>
+      <h3>Trabajas sin cita. El cliente no sabe si hay cola, se asoma, ve gente esperando… y sigue andando.</h3>
+      <p>Trabajar por orden de llegada es tu forma de funcionar, y está bien: el cliente entra cuando quiere. El problema es que <b>va a ciegas</b>. El sábado se asoma, ve tres personas esperando y se va a Efimero, que está 20 portales más arriba en tu misma calle. Y el martes a las 10, con las sillas vacías, no viene nadie porque nadie sabe que estás libre.</p>
+      <p>Esa fuga no sale en ninguna estadística, pero cada persona que se da la vuelta son 15 € que se lleva otro.</p>
+      <div class="fix"><b>Arreglo:</b> <b>espera en directo</b>. Desde tu móvil, con un toque, marcas "Entra ya", "~15 min", "~30 min" o "+45 min". El cliente lo ve en la web antes de salir de casa, y además ve un mapa con las horas más tranquilas. Así los sábados se reparten entre la semana.</div>
+    </div>
+  </article>
+
+  <article class="leak no-img">
+    <div>
+      <span class="sev m">● Media · 5</span>
+      <h3>Tus clientes vuelven "cuando se acuerdan".</h3>
+      <p>Sin cita no hay recordatorio. Un fade se ve bien unas 3 semanas, pero el cliente se acuerda a las 5 o a las 6. Cada semana de más es un corte menos al año, multiplicado por todos tus habituales.</p>
+      <div class="fix"><b>Arreglo:</b> un QR en el espejo que dice <b>"¿Cada cuánto te cortas? Escanea"</b>. El cliente elige 3, 4 o 5 semanas y <b>su propio móvil</b> le avisa: "Toca corte · Arte &amp; Corte". Sin apps, sin pedirle datos y sin que tú hagas nada.</div>
+    </div>
+  </article>
+</section>
+
+<section class="w sec">
+  <span class="k">Lo que te cuesta</span>
+  <h2>Pon tus números. <em>Haz la cuenta.</em></h2>
+  <div class="calc">
+    <div class="cin">
+      <label><span>Clientes que se dan la vuelta por la cola, a la semana <b id="vSe">3</b></span><input type="range" id="se" min="0" max="15" value="3"><small>Gente que se asoma, ve cola y se va.</small></label>
+      <label><span>Ticket medio <b id="vTk">15 €</b></span><input type="range" id="tk" min="10" max="30" value="15"></label>
+      <label><span>Clientes habituales <b id="vHb">300</b></span><input type="range" id="hb" min="50" max="1000" step="25" value="300"></label>
+      <label><span>Habituales que usarían el recordatorio <b id="vPc">20 %</b></span><input type="range" id="pc" min="5" max="60" step="5" value="20"><small>Si pasan de cortarse cada 5 semanas a cada 4.</small></label>
+    </div>
+    <div class="cout">
+      <span class="kk">Dinero que se escapa al año</span>
+      <div class="big" id="tot">0 €</div>
+      <div class="row"><span>Clientes que se van por la cola</span><b id="o1">0 €</b></div>
+      <div class="row"><span>Visitas que se pierden por olvido</span><b id="o2">0 €</b></div>
+      <div class="pay" id="pay"></div>
+    </div>
+  </div>
+  <p class="note">Calculadora orientativa: cambia los valores por tus números reales. Cuenta 50 semanas de trabajo al año.</p>
+</section>
+
+<section class="w sec" id="solucion">
+  <span class="k">La solución</span>
+  <h2>Plan "Silla Llena". <em>No es una web: es cerrar las fugas.</em></h2>
+  <div class="sol">
+    <div class="si"><span class="n">Fugas 1, 2 y 3</span><h3>Tu Google, arreglado</h3><p>Fuera el botón que lleva a Treatwell. Ficha fantasma reclamada y marcada como duplicada. Tu web y tu WhatsApp, puestos en la ficha. Enlace en la bio de Instagram.</p><span class="t">Lo primero que se hace</span></div>
+    <div class="si"><span class="n">Fuga 4</span><h3>Espera en directo</h3><p>Panel en tu móvil con 5 botones. El cliente ve "Entra ya" o "~30 min" antes de salir de casa. Si nadie toca nada, la web muestra sola lo habitual a esa hora, así nunca enseña un dato viejo.</p><span class="t">Un toque, cero esfuerzo</span></div>
+    <div class="si"><span class="n">Fuga 4</span><h3>Mapa de horas tranquilas</h3><p>Un calendario de colores que enseña cuándo suele estar lleno y cuándo vacío. Los sábados se reparten entre la semana y las mañanas dejan de estar muertas.</p><span class="t">Mueve clientes a horas valle</span></div>
+    <div class="si"><span class="n">Fuga 5</span><h3>Recordatorio + QR en el espejo</h3><p>"¿Cada cuánto te cortas?" El cliente escanea, elige, y su calendario le avisa solo cada 3, 4 o 5 semanas. Te lo damos impreso para el espejo.</p><span class="t">Más visitas al año, sin hacer nada</span></div>
+  </div>
+  <div class="demo-btns">
+    <a class="btn btn-brass btn-lg" href="./" target="_blank">Ver la web →</a>
+    <a class="btn btn-line-light btn-lg" href="panel.html" target="_blank">Probar tu panel</a>
+    <a class="btn btn-line-light btn-lg" href="qr.html" target="_blank">Ver el QR del espejo</a>
+  </div>
+  <p class="note">Para probarlo: abre el panel (código 1234), toca "~30 min" y vuelve a la web. Ya está cambiado.</p>
+</section>
+
+<section class="w sec">
+  <span class="k">Inversión</span>
+  <h2>Pago único. <em>Sin cuotas, sin comisiones.</em></h2>
+  <div class="items">
+    <div class="it"><h4>Web a medida</h4><p>Diseño con la estética del local, carta de precios, trabajos, equipo, reseñas, mapa y horario. Pensada para el móvil.</p><div class="pr">500 €</div></div>
+    <div class="it"><h4>Espera en directo + panel del equipo</h4><p>5 botones en tu móvil; la web se actualiza al momento.</p><div class="pr">100 €</div></div>
+    <div class="it"><h4>Mapa de horas tranquilas</h4><p>Ajustado a cómo se llena de verdad tu barbería.</p><div class="pr">30 €</div></div>
+    <div class="it"><h4>Recordatorio de corte + QR impreso</h4><p>El cliente se programa el aviso en su propio móvil.</p><div class="pr">40 €</div></div>
+    <div class="it"><h4>WhatsApp "¿hay cola?" + Instagram + reseñas</h4><p>Botón flotante, barra en el móvil, tus publicaciones y tu 4,8★ bien a la vista.</p><div class="pr">30 €</div></div>
+    <div class="it gift"><h4>Web en 3 idiomas (ES · CA · EN) <span class="g">Regalo</span></h4><p>Para el turista que busca "barber Sitges".</p><div class="pr"><s>150 €</s>0 €</div></div>
+    <div class="it gift"><h4>Arreglo de tu Google <span class="g">Regalo</span></h4><p>Treatwell fuera, ficha fantasma reclamada, web y WhatsApp en tu ficha.</p><div class="pr"><s>150 €</s>0 €</div></div>
+  </div>
+  <div class="offer">
+    <div><small>Plan Silla Llena · todo incluido</small><h3>Cerramos las 5 fugas.</h3><span>Alojamiento incluido · 0 € al mes · Sin comisiones por cliente</span></div>
+    <div class="p"><s>1.000 €</s><b>700 €</b><span>pago único</span></div>
+  </div>
+  <p class="note" id="payNote"></p>
+</section>
+
+<section class="w end">
+  <h2>No te traigo una web. <em>Te traigo la silla llena.</em></h2>
+  <p>Arte &amp; Corte · Carrer d'Espalter, 31 · Sitges</p>
+</section>
+
+<script>
+(() => {
+  const $ = s => document.getElementById(s), eur = n => Math.round(n).toLocaleString("es-ES") + " €", PRICE = 700;
+  function calc() {
+    const se = +$("se").value, tk = +$("tk").value, hb = +$("hb").value, pc = +$("pc").value;
+    $("vSe").textContent = se; $("vTk").textContent = tk + " €"; $("vHb").textContent = hb; $("vPc").textContent = pc + " %";
+    const o1 = se * tk * 50;
+    const o2 = hb * (pc / 100) * (52 / 4 - 52 / 5) * tk;
+    const tot = o1 + o2;
+    $("o1").textContent = eur(o1); $("o2").textContent = eur(o2); $("tot").textContent = eur(tot);
+    const weeks = tot > 0 ? Math.ceil(PRICE / (tot / 52)) : null;
+    $("pay").innerHTML = weeks ? `Con recuperar solo una parte, el Plan Silla Llena (${PRICE} €) <b>se paga en unas ${weeks} semanas</b>.` : "Mueve los valores para ver la cuenta.";
+  }
+  ["se", "tk", "hb", "pc"].forEach(id => $(id).addEventListener("input", calc)); calc();
+})();
+</script>
+</body>
+</html>

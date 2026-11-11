@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Panel · Arte & Corte</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0d0c0b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Espera A&C">
+<link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;500&family=Playfair+Display:ital,wght@0,800;0,900;1,600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0e0d0c;--ink2:#171513;--ink3:#211e1b;--cream:#f3ebdc;--brass:#c9a35b;--brass2:#e3c98f;--muted:#a69e90;--line:rgba(243,235,220,.13);--serif:"Playfair Display",Georgia,serif;--cond:"Oswald",sans-serif;--sans:"Inter",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{background:var(--ink);color:var(--cream);font-family:var(--sans);min-height:100%}
+body{padding:max(18px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom));max-width:520px;margin:0 auto}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:10px}
+.mark{width:40px;height:40px;border:1.5px solid var(--brass);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;font-size:.85rem}
+.mark em{color:var(--brass)}
+.brand b{font-family:var(--serif);font-size:1.1rem;display:block}.brand small{font-family:var(--cond);letter-spacing:.24em;font-size:.6rem;color:var(--brass);text-transform:uppercase}
+.k{font-family:var(--cond);text-transform:uppercase;letter-spacing:.22em;font-size:.7rem;color:var(--muted);margin-bottom:10px}
+.demo{font-family:var(--cond);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--brass);padding:4px 8px;border-radius:99px}
+/* pin */
+.pin{min-height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:20px}
+.pin h1{font-family:var(--serif);font-size:2rem}
+.dots{display:flex;gap:14px}.dots i{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--brass)}.dots i.f{background:var(--brass)}
+.pad{display:grid;grid-template-columns:repeat(3,76px);gap:14px}
+.pad button{height:76px;border-radius:50%;background:var(--ink3);font-size:1.6rem;font-weight:500;transition:background .15s}
+.pad button:active{background:var(--brass);color:var(--ink)}
+.err{color:#e8613c;min-height:1.2em;font-size:.9rem}
+.hint{color:var(--muted);font-size:.82rem}
+.shake{animation:sh .4s}@keyframes sh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+/* app */
+.preview{--wc:#3ecf74;border-radius:20px;padding:20px;background:var(--ink2);border:1px solid color-mix(in srgb,var(--wc) 50%,transparent);margin-bottom:22px;position:relative;overflow:hidden}
+.preview::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--wc)}
+.pv-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--cond);letter-spacing:.2em;font-size:.68rem;color:var(--wc);text-transform:uppercase}
+.ld{width:8px;height:8px;border-radius:50%;background:var(--wc)}
+.pv-big{font-family:var(--serif);font-weight:900;font-size:2.8rem;color:var(--wc);line-height:1;margin:10px 0 6px}
+.pv-sub{color:var(--muted);font-size:.9rem}
+.who{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px}
+.who button{padding:9px 14px;border-radius:99px;border:1px solid var(--line);font-size:.9rem}
+.who button.on{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.levels{display:grid;gap:10px}
+.lv{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:18px;background:var(--ink2);border:2px solid transparent;text-align:left;transition:transform .12s,border-color .2s,background .2s}
+.lv:active{transform:scale(.98)}
+.lv i{width:22px;height:22px;border-radius:50%;flex:none;background:var(--c)}
+.lv b{font-family:var(--serif);font-size:1.5rem;font-weight:800;display:block;line-height:1.1}
+.lv small{color:var(--muted);font-size:.84rem}
+.lv.on{border-color:var(--c);background:color-mix(in srgb,var(--c) 14%,var(--ink2))}
+.lv.on::after{content:"✓";margin-left:auto;font-size:1.3rem;color:var(--c)}
+.saved{position:fixed;left:50%;bottom:30px;transform:translate(-50%,30px);opacity:0;background:var(--cream);color:var(--ink);padding:12px 20px;border-radius:99px;font-weight:600;transition:all .35s;box-shadow:0 10px 30px rgba(0,0,0,.4);white-space:nowrap}
+.saved.on{opacity:1;transform:translate(-50%,0)}
+.foot{margin-top:26px;display:flex;flex-direction:column;gap:10px;font-size:.88rem;color:var(--muted)}
+.foot a{color:var(--brass2)}
+.tip{padding:14px 16px;border-radius:14px;background:rgba(201,163,91,.08);border:1px solid rgba(201,163,91,.25);font-size:.86rem;color:var(--cream)}
+.hide{display:none!important}
+</style>
+<script src="config.js"></script>
+<script src="estado.js"></script>
+</head>
+<body>
+
+<div class="top">
+  <div class="brand"><span class="mark">A<em>&amp;</em>C</span><span><b>Arte &amp; Corte</b><small>Panel del equipo</small></span></div>
+  <span class="demo" id="demoTag">Demo</span>
+</div>
+
+<!-- PIN -->
+<section class="pin" id="pinView">
+  <h1>Hola 👋</h1>
+  <p class="hint">Introduce el código de la barbería</p>
+  <div class="dots" id="dots"><i></i><i></i><i></i><i></i></div>
+  <p class="err" id="err"></p>
+  <div class="pad" id="pad"></div>
+  <p class="hint" id="pinHint"></p>
+</section>
+
+<!-- APP -->
+<section class="hide" id="app">
+  <p class="k">Lo que ven tus clientes ahora</p>
+  <div class="preview" id="pv"><span class="pv-tag"><i class="ld"></i><span id="pvTag">EN DIRECTO</span></span><div class="pv-big" id="pvBig">—</div><p class="pv-sub" id="pvSub"></p></div>
+
+  <p class="k">¿Quién actualiza?</p>
+  <div class="who" id="who"></div>
+
+  <p class="k">Toca para cambiar la espera</p>
+  <div class="levels" id="levels"></div>
+
+  <div class="foot">
+    <p class="tip">💡 Si nadie toca nada en <b id="cad"></b> min, la web muestra sola "lo normal a esta hora". Así nunca enseña un dato viejo.</p>
+    <p>📲 Añade esta página a la pantalla de inicio: un toque y listo.</p>
+    <a href="./" target="_blank">Ver la web como un cliente →</a>
+    <button id="out" style="text-align:left;color:var(--muted)">Cerrar sesión</button>
+  </div>
+</section>
+
+<div class="saved" id="saved">✓ Actualizado en la web</div>
+
+<script>
+(() => {
+  const S = window.SITE, E = window.ESTADO, $ = s => document.querySelector(s);
+  const LV = [
+    { n: 0, t: "Entra ya", s: "Hay silla libre" },
+    { n: 1, t: "~15 min", s: "1–2 personas esperando" },
+    { n: 2, t: "~30 min", s: "Algo de cola" },
+    { n: 3, t: "+45 min", s: "Lleno" },
+    { n: 4, t: "En pausa", s: "Comida / descanso" }
+  ];
+  const SUB = ["Hay silla libre. Ahora es buen momento.", "Uno o dos por delante.", "Un poco de cola. Buen rato para un café cerca.", "Está lleno. Mira abajo las horas más tranquilas.", "Volvemos enseguida. Mira de nuevo en un rato."];
+  let pin = "", who = "", cur = null;
+  const ss = { get: k => { try { return sessionStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) { } }, del: k => { try { sessionStorage.removeItem(k); } catch (e) { } } };
+  try { who = localStorage.getItem("ac-who") || S.barberos[0]; } catch (e) { who = S.barberos[0]; }
+
+  $("#demoTag").classList.toggle("hide", !!S.estadoEndpoint);
+  $("#pinHint").textContent = S.estadoEndpoint ? "" : "Demo: código " + S.panelPinDemo;
+  $("#cad").textContent = S.caducaMin;
+
+  // --- PIN ---
+  const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", "⌫"];
+  $("#pad").innerHTML = keys.map(k => k ? `<button data-k="${k}">${k}</button>` : "<span></span>").join("");
+  let typed = "";
+  const drawDots = () => [...document.querySelectorAll("#dots i")].forEach((d, i) => d.classList.toggle("f", i < typed.length));
+  $("#pad").addEventListener("click", async e => {
+    const k = e.target.closest("button")?.dataset.k; if (!k) return;
+    if (k === "⌫") typed = typed.slice(0, -1); else if (typed.length < 4) typed += k;
+    drawDots(); $("#err").textContent = "";
+    if (typed.length === 4) {
+      const ok = await E.comprobarPin(typed);
+      if (ok) { pin = typed; ss.set("ac-pin", pin); enter(); }
+      else { $("#err").textContent = "Código incorrecto"; $("#dots").classList.add("shake"); setTimeout(() => $("#dots").classList.remove("shake"), 400); typed = ""; drawDots(); }
+    }
+  });
+
+  function enter() {
+    $("#pinView").classList.add("hide"); $("#app").classList.remove("hide");
+    $("#who").innerHTML = S.barberos.map(b => `<button class="${b === who ? "on" : ""}" data-b="${b}">${b}</button>`).join("");
+    $("#who").onclick = e => { const b = e.target.closest("button")?.dataset.b; if (!b) return; who = b; try { localStorage.setItem("ac-who", b); } catch (x) { } [...$("#who").children].forEach(x => x.classList.toggle("on", x.dataset.b === b)); };
+    $("#levels").innerHTML = LV.map(l => `<button class="lv" data-n="${l.n}" style="--c:${E.NIV[l.n].color}"><i></i><span><b>${l.t}</b><small>${l.s}</small></span></button>`).join("");
+    $("#levels").onclick = async e => {
+      const b = e.target.closest(".lv"); if (!b) return;
+      const n = +b.dataset.n;
+      try { await E.guardar({ n, b: who }, pin); if (navigator.vibrate) navigator.vibrate(30); toast("✓ Actualizado en la web"); refresh(); }
+      catch (err) { toast("⚠️ No se pudo guardar. Revisa la conexión"); }
+    };
+    refresh(); setInterval(refresh, 30000);
+  }
+  function toast(m) { const s = $("#saved"); s.textContent = m; s.classList.add("on"); clearTimeout(s._t); s._t = setTimeout(() => s.classList.remove("on"), 1800); }
+
+  async function refresh() {
+    const est = await E.leer(); const r = E.resolver(est);
+    const pv = $("#pv");
+    if (r.tipo === "cerrado") { pv.style.setProperty("--wc", "#8b8378"); $("#pvTag").textContent = "CERRADO"; $("#pvBig").textContent = "Cerrado"; $("#pvSub").textContent = r.prox ? `Abre ${r.prox.dias === 0 ? "hoy" : r.prox.dias === 1 ? "mañana" : "el " + ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"][r.prox.dow]} a las ${r.prox.h}` : ""; }
+    else {
+      const lv = E.NIV[r.nivel]; pv.style.setProperty("--wc", lv.color);
+      $("#pvBig").textContent = LV[r.nivel].t;
+      if (r.tipo === "vivo") { const m = Math.round((Date.now() - r.ts) / 60000); $("#pvTag").textContent = "EN DIRECTO"; $("#pvSub").textContent = SUB[r.nivel] + " · " + (m < 2 ? "ahora mismo" : "hace " + m + " min") + " · " + (r.b || "el equipo"); }
+      else { $("#pvTag").textContent = "ESTIMACIÓN"; $("#pvSub").textContent = "Nadie la ha actualizado: se ve lo normal a esta hora."; }
+    }
+    document.querySelectorAll(".lv").forEach(b => b.classList.toggle("on", r.tipo === "vivo" && +b.dataset.n === r.nivel));
+  }
+
+  $("#out").onclick = () => { ss.del("ac-pin"); location.reload(); };
+
+  const saved = ss.get("ac-pin");
+  if (saved) { E.comprobarPin(saved).then(ok => { if (ok) { pin = saved; enter(); } }); }
+})();
+</script>
+</body>
+</html>
